@@ -12,3 +12,21 @@ urlpatterns = [
     path('api/payments/', include('payments.urls')),  # رابط تطبيق الدفع
     path('', home_view, name='home'),  # الصفحة الرئيسية
 ]
+
+from drf_yasg.views import get_schema_view
+from drf_yasg import openapi
+from rest_framework.permissions import AllowAny
+
+schema_view = get_schema_view(
+    openapi.Info(
+        title="Real Estate System API",
+        default_version='v1',
+        description="Documentation for all API endpoints",
+    ),
+    public=True,
+    permission_classes=(AllowAny,),
+)
+
+urlpatterns += [
+    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+]
