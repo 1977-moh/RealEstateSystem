@@ -1,20 +1,17 @@
 from pathlib import Path
-import os
 from decouple import config
-
 
 # === المسار الأساسي للمشروع ===
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # === المفتاح السري (احتفظ به سريًا في الإنتاج) ===
-SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'your-secret-key')
+SECRET_KEY = config('DJANGO_SECRET_KEY', default='your-secret-key')
 
 # === وضع التصحيح (Debug) ===
-DEBUG = os.getenv('DJANGO_DEBUG', 'True') == 'True'
+DEBUG = config('DJANGO_DEBUG', default=True, cast=bool)
 
 # === السماح بالمضيفات (Allowed Hosts) ===
-
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = config('DJANGO_ALLOWED_HOSTS', default='127.0.0.1,localhost').split(',')
 
 # === التطبيقات المثبتة (Installed Apps) ===
 INSTALLED_APPS = [
@@ -36,6 +33,7 @@ INSTALLED_APPS = [
     'leads',
     'payments',
     'home',
+    'brokers',  # تطبيق الوساطة العقارية
 ]
 
 # === الميدلوير (Middleware) ===
@@ -76,11 +74,11 @@ WSGI_APPLICATION = 'real_estate_system.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('POSTGRES_DB', 'real_estate_management'),
-        'USER': os.getenv('POSTGRES_USER', 'postgres'),
-        'PASSWORD': os.getenv('POSTGRES_PASSWORD', 'your_password'),
-        'HOST': os.getenv('POSTGRES_HOST', 'localhost'),
-        'PORT': os.getenv('POSTGRES_PORT', '5432'),
+        'NAME': config('POSTGRES_DB', default='real_estate_management'),
+        'USER': config('POSTGRES_USER', default='postgres'),
+        'PASSWORD': config('POSTGRES_PASSWORD', default='your_password'),
+        'HOST': config('POSTGRES_HOST', default='localhost'),
+        'PORT': config('POSTGRES_PORT', default='5432'),
     }
 }
 
@@ -121,15 +119,35 @@ if not DEBUG:
     CSRF_COOKIE_SECURE = True
     SESSION_COOKIE_SECURE = True
     X_FRAME_OPTIONS = 'DENY'
+
+# === إعدادات التخزين المؤقت (Cache) ===
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.redis.RedisCache',
         'LOCATION': 'redis://127.0.0.1:6379/1',
     }
 }
-SECURE_HSTS_SECONDS = 3600
-SECURE_BROWSER_XSS_FILTER = True
-SECURE_CONTENT_TYPE_NOSNIFF = True
-CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_SECURE = True
-X_FRAME_OPTIONS = 'DENY'
+
+# === إعدادات تسجيل الأخطاء (Logging) ===
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': BASE_DIR / 'debug.log',
+            'formatter': 'verbose',
+        },
+    },
+    'root': {
+        'handlers': ['file'],
+        'level': 'DEBUG',
+    },
+}
