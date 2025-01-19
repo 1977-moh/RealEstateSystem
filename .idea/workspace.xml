@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3fe23c96-176e-4bb6-927b-78e82cf4e7f9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/pythonProject.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/campaigns/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/campaigns/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/campaigns/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/campaigns/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/campaigns/migrations/0002_remove_campaign_created_at_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/campaigns/migrations/0003_alter_campaign_options_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/campaigns/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/campaigns/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/campaigns/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/campaigns/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/campaigns/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/campaigns/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clients/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clients/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clients/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clients/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clients/migrations/0002_client_client_request_details_client_entry_date_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clients/migrations/0003_alter_client_options.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clients/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clients/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clients/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clients/signals.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clients/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clients/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clients/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/employees/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/employees/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/employees/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/employees/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/employees/migrations/0002_alter_employee_options_and_more.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/employees/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/employees/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/employees/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/employees/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/employees/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/employees/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/templates/home/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/home/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leads/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leads/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leads/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leads/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leads/migrations/0002_alter_lead_options.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leads/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leads/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leads/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leads/signals.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leads/sync_campaign_data" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leads/tasks.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leads/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leads/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/leads/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payments/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payments/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payments/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payments/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payments/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payments/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payments/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payments/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payments/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payments/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/properties/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/properties/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/properties/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/properties/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/properties/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/properties/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/properties/serializers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/properties/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/properties/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/properties/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/real_estate_system/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/real_estate_system/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/real_estate_system/asgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/real_estate_system/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/real_estate_system/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/real_estate_system/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 1
+}]]></component>
+  <component name="ProjectId" id="2rU0ffUt7rnbq0pPSPUb1xPGSim" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Python.admin.executor": "Run",
+    "Python.apps.executor": "Run",
+    "Python.models.executor": "Run",
+    "Python.serializers.executor": "Run",
+    "Python.settings.executor": "Run",
+    "Python.signals.executor": "Run",
+    "Python.tasks.executor": "Run",
+    "Python.urls.executor": "Run",
+    "Python.views.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-0509580d9d50-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.14494.241" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3fe23c96-176e-4bb6-927b-78e82cf4e7f9" name="Changes" comment="" />
+      <created>1736598451612</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1736598451612</updated>
+    </task>
+    <servers />
+  </component>
+</project>

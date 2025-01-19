@@ -1,0 +1,60 @@
+from django.http import JsonResponse, Http404
+from django.views.decorators.csrf import csrf_exempt
+from django.utils.decorators import method_decorator
+from campaigns.models import Campaign
+from leads.models import Lead
+from leads.tasks import distribute_leads
+import requests
+
+@method_decorator(csrf_exempt, name='dispatch')  # لتجاوز التحقق من CSRF عند الحاجة
+def sync_campaign_data(request, campaign_id):
+    """
+    مزامنة بيانات الحملة واستيراد الليدز وتوزيعها.
+    """
+    try:
+        # الحصول على الحملة
+        campaign = Campaign.objects.get(id=campaign_id)
+    except Campaign.DoesNotExist:
+        raise Http404("Campaign not found.")
+
+    if not campaign.campaign_url:
+        return JsonResponse({"error": "Campaign URL is not set."}, status=400)
+
+    try:
+        # استدعاء API الخاص بالحملة
+        response = requests.get(campaign.campaign_url)
+        if response.status_code != 200:
+            return JsonResponse({"error": "Failed to fetch campaign data."}, status=500)
+
+        # استخراج بيانات الليدز من الرد
+        campaign_data = response.json()
+        external_api_leads = campaign_data.get("leads", [])
+        if not external_api_leads:
+            return JsonResponse({"message": "No leads found in campaign data."}, status=200)
+
+        # استيراد الليدز إلى قاعدة البيانات
+        imported_leads = []
+        for lead_data in external_api_leads:
+            lead, created = Lead.objects.get_or_create(
+                email=lead_data.get("email"),  # تحديد البريد الإلكتروني لتجنب التكرار
+                defaults={
+                    "name": lead_data.get("name"),
+                    "phone": lead_data.get("phone"),
+                    "campaign": campaign,
+                },
+            )
+            if created:
+                imported_leads.append(lead)
+
+        # توزيع الليدز على الموظفين إذا تم استيراد أي ليد جديد
+        if imported_leads:
+            distribute_leads()
+
+        return JsonResponse({
+            "success": "Leads imported and distributed successfully.",
+            "imported_leads": len(imported_leads),
+        }, status=200)
+
+    except requests.exceptions.RequestException as e:
+        # معالجة أي استثناءات أثناء طلب الـ API
+        return JsonResponse({"error": str(e)}, status=500)
