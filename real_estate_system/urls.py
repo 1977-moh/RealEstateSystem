@@ -10,6 +10,7 @@ urlpatterns = [
     path('api/campaigns/', include('campaigns.urls')),  # رابط تطبيق الحملات الإعلانية
     path('api/leads/', include('leads.urls')),  # رابط تطبيق الليدز
     path('api/payments/', include('payments.urls')),  # رابط تطبيق الدفع
+    path('api/', include('offer.urls')),
     path('', home_view, name='home'),  # الصفحة الرئيسية
 ]
 

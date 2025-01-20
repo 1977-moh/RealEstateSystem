@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'payments',
     'home',
     'brokers',  # تطبيق الوساطة العقارية
+    'offer',  # تطبيق العروض
 ]
 
 # === الميدلوير (Middleware) ===
