@@ -4,33 +4,35 @@ from .models import Client
 
 @admin.register(Client)
 class ClientAdmin(admin.ModelAdmin):
-    # عرض الأعمدة في لوحة الإدارة
-    list_display = ['name', 'email', 'phone', 'location', 'entry_date', 'created_at']
+    """
+    ✅ إدارة واجهة العملاء (Client) في لوحة إدارة Django.
+    """
 
-    # إضافة خيارات التصفية
-    list_filter = ['entry_date', 'created_at', 'location']
+    # ✅ عرض الأعمدة الرئيسية
+    list_display = ['id', 'name', 'email', 'phone', 'location', 'status', 'entry_date', 'created_at']
+    list_filter = ['status', 'entry_date', 'created_at', 'location']  # ✅ دعم التصفية حسب الحالة
+    search_fields = ['id', 'name', 'email', 'phone']  # ✅ دعم البحث عن العملاء باستخدام `UUID`
+    ordering = ['-created_at']  # ✅ ترتيب افتراضي حسب الأحدث
 
-    # تمكين البحث
-    search_fields = ['name', 'email', 'phone']
+    # ✅ الحقول للقراءة فقط
+    readonly_fields = ['id', 'entry_date', 'created_at', 'updated_at']
 
-    # تحديد ترتيب السجلات افتراضيًا
-    ordering = ['-created_at']
-
-    # جعل الحقول غير قابلة للتعديل
-    readonly_fields = ['entry_date', 'created_at', 'updated_at']
-
-    # تنظيم الحقول في مجموعات
+    # ✅ تنظيم الحقول في مجموعات مع تعليمات مساعدة
     fieldsets = (
         ("Basic Information", {
-            'fields': ('name', 'email', 'phone', 'location', 'interests')
+            'fields': ('name', 'email', 'phone', 'location', 'status', 'interests'),
+            'description': "الحقول الأساسية التي تحدد معلومات العميل."
         }),
         ("Details", {
-            'fields': ('client_request_details', 'address')
+            'fields': ('client_request_details', 'address'),
+            'description': "تفاصيل إضافية عن طلبات العميل وعنوانه."
         }),
         ("Timestamps", {
-            'fields': ('entry_date', 'created_at', 'updated_at')
+            'fields': ('id', 'entry_date', 'created_at', 'updated_at'),
+            'description': "المعرف الفريد والوقت الزمني لإدخال وإنشاء وتحديث العميل."
         }),
     )
 
-    # عدد السجلات في الصفحة الواحدة
-    list_per_page = 20
+    # ✅ تحسين واجهة إدارة Django
+    list_per_page = 20  # عدد السجلات في الصفحة الواحدة
+    date_hierarchy = 'created_at'  # ✅ إضافة شريط زمني أعلى القائمة للبحث بالتاريخ

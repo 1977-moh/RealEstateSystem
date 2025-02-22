@@ -1,11 +1,8 @@
 from django.urls import path
-from .views import ClientListView, ClientDetailView
+from .views import ClientFollowUpView
 
-# Namespace للتطبيق
 app_name = 'clients'
 
-# تعريف المسارات
 urlpatterns = [
-    path('', ClientListView.as_view(), name='client-list'),  # عرض قائمة العملاء أو إضافة عميل جديد
-    path('<int:pk>/', ClientDetailView.as_view(), name='client-detail'),  # عرض/تحديث/حذف عميل معين
+    path('follow-up/', ClientFollowUpView.as_view(), name='client-follow-up'),
 ]

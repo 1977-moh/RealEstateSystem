@@ -1,10 +1,10 @@
 from django.urls import path
-from .views import PaymentListCreateView
+from .views import PaymentListCreateView, PaymentDetailView
 
-# تعريف مساحة أسماء للتطبيق
+# ✅ تعريف مساحة أسماء للتطبيق لمنع التضارب
 app_name = 'payments'
 
 urlpatterns = [
-    # عرض قائمة المدفوعات وإنشاء دفعة جديدة
-    path('', PaymentListCreateView.as_view(), name='list-create'),
+    path('', PaymentListCreateView.as_view(), name='payment-list-create'),  # ✅ إدارة جميع المدفوعات
+    path('<uuid:pk>/', PaymentDetailView.as_view(), name='payment-detail'),  # ✅ عرض / تعديل / حذف دفعة معينة
 ]

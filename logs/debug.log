@@ -1,0 +1,545 @@
+INFO 2025-02-09 17:07:11,566 autoreload Watching for file changes with StatReloader
+INFO 2025-02-09 20:08:29,096 autoreload Watching for file changes with StatReloader
+INFO 2025-02-09 20:13:01,975 autoreload Watching for file changes with StatReloader
+INFO 2025-02-09 20:18:52,735 autoreload D:\CRM_Developer\pythonProject\leads\views.py changed, reloading.
+INFO 2025-02-09 20:18:53,485 autoreload Watching for file changes with StatReloader
+INFO 2025-02-09 21:58:52,392 autoreload D:\CRM_Developer\pythonProject\leads\models.py changed, reloading.
+INFO 2025-02-09 21:58:53,065 autoreload Watching for file changes with StatReloader
+INFO 2025-02-09 22:01:11,348 autoreload Watching for file changes with StatReloader
+INFO 2025-02-09 22:05:29,358 autoreload D:\CRM_Developer\pythonProject\employees\admin.py changed, reloading.
+INFO 2025-02-09 22:05:30,092 autoreload Watching for file changes with StatReloader
+INFO 2025-02-09 22:08:01,994 autoreload Watching for file changes with StatReloader
+DEBUG 2025-02-09 22:09:45,213 utils Forcing inline output for ModelSerializer named 'NestedSerializer':
+NestedSerializer(read_only=True):
+    id = IntegerField(label='ID', read_only=True)
+    name = CharField(label='Broker Name', max_length=255, validators=[<UniqueValidator(queryset=Broker.objects.all())>])
+    address = CharField(allow_blank=True, allow_null=True, required=False, style={'base_template': 'textarea.html'})
+    contact_number = CharField(label='Contact Number', max_length=20)
+    email = EmailField(max_length=254, validators=[<UniqueValidator(queryset=Broker.objects.all())>])
+    commission_rate = DecimalField(decimal_places=2, label='Commission Rate (%)', max_digits=5, required=False)
+    additional_incentives = DecimalField(decimal_places=2, label='Additional Incentives', max_digits=10, required=False)
+    total_earnings = DecimalField(decimal_places=2, label='Total Earnings', max_digits=15, required=False)
+    created_at = DateTimeField(label='Created At', required=False)
+    updated_at = DateTimeField(label='Updated At', read_only=True)
+    responsible_employee = PrimaryKeyRelatedField(allow_null=True, label='Responsible Employee', queryset=Employee.objects.all(), required=False)
+DEBUG 2025-02-09 22:09:45,267 utils Forcing inline output for ModelSerializer named 'NestedSerializer':
+NestedSerializer(read_only=True):
+    id = IntegerField(label='ID', read_only=True)
+    name = CharField(label='Broker Name', max_length=255, validators=[<UniqueValidator(queryset=Broker.objects.all())>])
+    address = CharField(allow_blank=True, allow_null=True, required=False, style={'base_template': 'textarea.html'})
+    contact_number = CharField(label='Contact Number', max_length=20)
+    email = EmailField(max_length=254, validators=[<UniqueValidator(queryset=Broker.objects.all())>])
+    commission_rate = DecimalField(decimal_places=2, label='Commission Rate (%)', max_digits=5, required=False)
+    additional_incentives = DecimalField(decimal_places=2, label='Additional Incentives', max_digits=10, required=False)
+    total_earnings = DecimalField(decimal_places=2, label='Total Earnings', max_digits=15, required=False)
+    created_at = DateTimeField(label='Created At', required=False)
+    updated_at = DateTimeField(label='Updated At', read_only=True)
+    responsible_employee = PrimaryKeyRelatedField(allow_null=True, label='Responsible Employee', queryset=Employee.objects.all(), required=False)
+DEBUG 2025-02-09 22:09:45,336 utils Forcing inline output for ModelSerializer named 'NestedSerializer':
+NestedSerializer(read_only=True):
+    id = IntegerField(label='ID', read_only=True)
+    name = CharField(label='Broker Name', max_length=255, validators=[<UniqueValidator(queryset=Broker.objects.all())>])
+    address = CharField(allow_blank=True, allow_null=True, required=False, style={'base_template': 'textarea.html'})
+    contact_number = CharField(label='Contact Number', max_length=20)
+    email = EmailField(max_length=254, validators=[<UniqueValidator(queryset=Broker.objects.all())>])
+    commission_rate = DecimalField(decimal_places=2, label='Commission Rate (%)', max_digits=5, required=False)
+    additional_incentives = DecimalField(decimal_places=2, label='Additional Incentives', max_digits=10, required=False)
+    total_earnings = DecimalField(decimal_places=2, label='Total Earnings', max_digits=15, required=False)
+    created_at = DateTimeField(label='Created At', required=False)
+    updated_at = DateTimeField(label='Updated At', read_only=True)
+    responsible_employee = PrimaryKeyRelatedField(allow_null=True, label='Responsible Employee', queryset=Employee.objects.all(), required=False)
+INFO 2025-02-09 22:14:13,319 autoreload D:\CRM_Developer\pythonProject\accounting\models.py changed, reloading.
+INFO 2025-02-09 22:14:14,102 autoreload Watching for file changes with StatReloader
+INFO 2025-02-09 22:16:45,072 autoreload D:\CRM_Developer\pythonProject\accounting\models.py changed, reloading.
+INFO 2025-02-09 22:16:45,806 autoreload Watching for file changes with StatReloader
+INFO 2025-02-09 22:19:23,184 autoreload D:\CRM_Developer\pythonProject\accounting\models.py changed, reloading.
+INFO 2025-02-09 22:19:23,939 autoreload Watching for file changes with StatReloader
+INFO 2025-02-09 22:28:28,696 autoreload Watching for file changes with StatReloader
+INFO 2025-02-09 23:09:09,323 autoreload Watching for file changes with StatReloader
+WARNING 2025-02-09 23:09:50,369 log Forbidden: /api/clients/
+WARNING 2025-02-09 23:10:08,870 log Forbidden: /api/clients/
+WARNING 2025-02-09 23:10:11,779 log Forbidden: /api/clients/
+ERROR 2025-02-09 23:10:35,399 log Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedTable: relation "home_sitesettings" does not exist
+LINE 1: SELECT 1 AS "a" FROM "home_sitesettings" LIMIT 1
+                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\contrib\admin\sites.py", line 260, in wrapper
+    return self.admin_view(view, cacheable)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\contrib\admin\sites.py", line 241, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\contrib\admin\sites.py", line 557, in index
+    app_list = self.get_app_list(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\contrib\admin\sites.py", line 541, in get_app_list
+    app_dict = self._build_app_dict(request, app_label)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\contrib\admin\sites.py", line 487, in _build_app_dict
+    perms = model_admin.get_model_perms(request)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\contrib\admin\options.py", line 781, in get_model_perms
+    "add": self.has_add_permission(request),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\home\admin.py", line 27, in has_add_permission
+    return not SiteSettings.objects.exists()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\db\models\query.py", line 1288, in exists
+    return self.query.has_results(using=self.db)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\db\models\sql\query.py", line 660, in has_results
+    return compiler.has_results()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1542, in has_results
+    return bool(self.execute_sql(SINGLE))
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: relation "home_sitesettings" does not exist
+LINE 1: SELECT 1 AS "a" FROM "home_sitesettings" LIMIT 1
+                             ^
+
+ERROR 2025-02-09 23:17:44,667 log Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedTable: relation "home_sitesettings" does not exist
+LINE 1: SELECT 1 AS "a" FROM "home_sitesettings" LIMIT 1
+                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\contrib\admin\sites.py", line 260, in wrapper
+    return self.admin_view(view, cacheable)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\utils\decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\utils\decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\contrib\admin\sites.py", line 241, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\contrib\admin\sites.py", line 557, in index
+    app_list = self.get_app_list(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\contrib\admin\sites.py", line 541, in get_app_list
+    app_dict = self._build_app_dict(request, app_label)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\contrib\admin\sites.py", line 487, in _build_app_dict
+    perms = model_admin.get_model_perms(request)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\contrib\admin\options.py", line 781, in get_model_perms
+    "add": self.has_add_permission(request),
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\home\admin.py", line 27, in has_add_permission
+    return not SiteSettings.objects.exists()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\db\models\query.py", line 1288, in exists
+    return self.query.has_results(using=self.db)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\db\models\sql\query.py", line 660, in has_results
+    return compiler.has_results()
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1542, in has_results
+    return bool(self.execute_sql(SINGLE))
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1574, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: relation "home_sitesettings" does not exist
+LINE 1: SELECT 1 AS "a" FROM "home_sitesettings" LIMIT 1
+                             ^
+
+INFO 2025-02-15 00:31:37,310 autoreload Watching for file changes with StatReloader
+INFO 2025-02-15 00:44:00,068 autoreload D:\CRM_Developer\pythonProject\real_estate_system\urls.py changed, reloading.
+INFO 2025-02-15 00:44:01,362 autoreload Watching for file changes with StatReloader
+INFO 2025-02-15 00:45:37,178 autoreload D:\CRM_Developer\pythonProject\real_estate_system\urls.py changed, reloading.
+INFO 2025-02-15 00:45:38,351 autoreload Watching for file changes with StatReloader
+INFO 2025-02-15 00:46:20,748 autoreload Watching for file changes with StatReloader
+INFO 2025-02-15 00:48:00,369 autoreload Watching for file changes with StatReloader
+INFO 2025-02-15 00:50:46,488 autoreload D:\CRM_Developer\pythonProject\campaigns\views.py changed, reloading.
+INFO 2025-02-15 00:50:47,665 autoreload Watching for file changes with StatReloader
+INFO 2025-02-15 00:51:53,950 autoreload D:\CRM_Developer\pythonProject\campaigns\views.py changed, reloading.
+INFO 2025-02-15 00:51:55,201 autoreload Watching for file changes with StatReloader
+INFO 2025-02-15 00:53:36,311 autoreload D:\CRM_Developer\pythonProject\campaigns\urls.py changed, reloading.
+INFO 2025-02-15 00:53:37,511 autoreload Watching for file changes with StatReloader
+INFO 2025-02-15 00:56:11,719 autoreload D:\CRM_Developer\pythonProject\campaigns\models.py changed, reloading.
+INFO 2025-02-15 00:56:12,995 autoreload Watching for file changes with StatReloader
+INFO 2025-02-15 00:57:08,103 autoreload D:\CRM_Developer\pythonProject\campaigns\serializers.py changed, reloading.
+INFO 2025-02-15 00:57:09,337 autoreload Watching for file changes with StatReloader
+INFO 2025-02-15 00:58:45,498 autoreload D:\CRM_Developer\pythonProject\campaigns\views.py changed, reloading.
+INFO 2025-02-15 00:58:46,794 autoreload Watching for file changes with StatReloader
+INFO 2025-02-15 01:03:24,848 autoreload D:\CRM_Developer\pythonProject\campaigns\admin.py changed, reloading.
+INFO 2025-02-15 01:03:26,114 autoreload Watching for file changes with StatReloader
+INFO 2025-02-15 01:05:17,132 autoreload D:\CRM_Developer\pythonProject\campaigns\views.py changed, reloading.
+INFO 2025-02-15 01:05:18,518 autoreload Watching for file changes with StatReloader
+INFO 2025-02-15 01:11:15,075 autoreload Watching for file changes with StatReloader
+INFO 2025-02-15 01:17:48,358 autoreload D:\CRM_Developer\pythonProject\dashboard\models.py changed, reloading.
+INFO 2025-02-15 01:17:49,639 autoreload Watching for file changes with StatReloader
+INFO 2025-02-15 01:23:13,341 autoreload Watching for file changes with StatReloader
+INFO 2025-02-15 01:27:19,736 autoreload D:\CRM_Developer\pythonProject\employees\admin.py changed, reloading.
+INFO 2025-02-15 01:27:21,088 autoreload Watching for file changes with StatReloader
+INFO 2025-02-15 01:55:02,925 autoreload Watching for file changes with StatReloader
+ERROR 2025-02-18 19:04:50,117 signal Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x0000011F7994BB90>> raised: ModuleNotFoundError("No module named 'django_celery_results'")
+Traceback (most recent call last):
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\celery\utils\dispatch\signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\celery\fixups\django.py", line 100, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\celery\fixups\django.py", line 138, in validate_models
+    self.django_setup()
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\celery\fixups\django.py", line 134, in django_setup
+    django.setup()
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\apps\registry.py", line 91, in populate
+    app_config = AppConfig.create(entry)
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\apps\config.py", line 193, in create
+    import_module(entry)
+  File "C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\importlib\__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'django_celery_results'
+ERROR 2025-02-18 19:04:50,180 signal Signal handler <promise@0x11f7cd6fbb0 --> <bound method Celery._autodiscover_tasks of <Celery real_estate_system at 0x11f7c017cb0>>> raised: AppRegistryNotReady("Apps aren't loaded yet.")
+Traceback (most recent call last):
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\celery\utils\dispatch\signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\vine\promises.py", line 161, in __call__
+    return self.throw()
+           ^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\vine\promises.py", line 158, in __call__
+    retval = fun(*final_args, **final_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\celery\app\base.py", line 694, in _autodiscover_tasks
+    return self._autodiscover_tasks_from_fixups(related_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\celery\app\base.py", line 706, in _autodiscover_tasks_from_fixups
+    for pkg in fixup.autodiscover_tasks()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\celery\fixups\django.py", line 110, in autodiscover_tasks
+    return [config.name for config in apps.get_app_configs()]
+                                      ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\apps\registry.py", line 147, in get_app_configs
+    self.check_apps_ready()
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\apps\registry.py", line 138, in check_apps_ready
+    raise AppRegistryNotReady("Apps aren't loaded yet.")
+django.core.exceptions.AppRegistryNotReady: Apps aren't loaded yet.
+ERROR 2025-02-18 19:09:57,785 signal Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x00000262E66C6810>> raised: ImproperlyConfigured("Application labels aren't unique, duplicates: django_celery_results")
+Traceback (most recent call last):
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\celery\utils\dispatch\signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\celery\fixups\django.py", line 100, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\celery\fixups\django.py", line 138, in validate_models
+    self.django_setup()
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\celery\fixups\django.py", line 134, in django_setup
+    django.setup()
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\apps\registry.py", line 93, in populate
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Application labels aren't unique, duplicates: django_celery_results
+ERROR 2025-02-18 19:09:57,879 signal Signal handler <promise@0x262e66bfed0 --> <bound method Celery._autodiscover_tasks of <Celery real_estate_system at 0x262e6659af0>>> raised: AppRegistryNotReady("Apps aren't loaded yet.")
+Traceback (most recent call last):
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\celery\utils\dispatch\signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\vine\promises.py", line 161, in __call__
+    return self.throw()
+           ^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\vine\promises.py", line 158, in __call__
+    retval = fun(*final_args, **final_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\celery\app\base.py", line 694, in _autodiscover_tasks
+    return self._autodiscover_tasks_from_fixups(related_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\celery\app\base.py", line 706, in _autodiscover_tasks_from_fixups
+    for pkg in fixup.autodiscover_tasks()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\celery\fixups\django.py", line 110, in autodiscover_tasks
+    return [config.name for config in apps.get_app_configs()]
+                                      ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\apps\registry.py", line 147, in get_app_configs
+    self.check_apps_ready()
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\apps\registry.py", line 138, in check_apps_ready
+    raise AppRegistryNotReady("Apps aren't loaded yet.")
+django.core.exceptions.AppRegistryNotReady: Apps aren't loaded yet.
+ERROR 2025-02-18 19:11:01,527 signal Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x0000023690AC6930>> raised: ImproperlyConfigured("Application labels aren't unique, duplicates: django_celery_results")
+Traceback (most recent call last):
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\celery\utils\dispatch\signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\celery\fixups\django.py", line 100, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\celery\fixups\django.py", line 138, in validate_models
+    self.django_setup()
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\celery\fixups\django.py", line 134, in django_setup
+    django.setup()
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\apps\registry.py", line 93, in populate
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Application labels aren't unique, duplicates: django_celery_results
+ERROR 2025-02-18 19:11:01,605 signal Signal handler <promise@0x23690abfed0 --> <bound method Celery._autodiscover_tasks of <Celery real_estate_system at 0x23690a59af0>>> raised: AppRegistryNotReady("Apps aren't loaded yet.")
+Traceback (most recent call last):
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\celery\utils\dispatch\signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\vine\promises.py", line 161, in __call__
+    return self.throw()
+           ^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\vine\promises.py", line 158, in __call__
+    retval = fun(*final_args, **final_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\celery\app\base.py", line 694, in _autodiscover_tasks
+    return self._autodiscover_tasks_from_fixups(related_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\celery\app\base.py", line 706, in _autodiscover_tasks_from_fixups
+    for pkg in fixup.autodiscover_tasks()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\celery\fixups\django.py", line 110, in autodiscover_tasks
+    return [config.name for config in apps.get_app_configs()]
+                                      ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\apps\registry.py", line 147, in get_app_configs
+    self.check_apps_ready()
+  File "D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\django\apps\registry.py", line 138, in check_apps_ready
+    raise AppRegistryNotReady("Apps aren't loaded yet.")
+django.core.exceptions.AppRegistryNotReady: Apps aren't loaded yet.
+INFO 2025-02-18 20:20:44,240 autoreload Watching for file changes with StatReloader
+INFO 2025-02-19 23:39:26,731 autoreload Watching for file changes with StatReloader
+INFO 2025-02-19 23:44:37,818 autoreload D:\CRM_Developer\pythonProject\brokers\models.py changed, reloading.
+INFO 2025-02-19 23:44:39,855 autoreload Watching for file changes with StatReloader
+INFO 2025-02-19 23:51:37,148 autoreload D:\CRM_Developer\pythonProject\leads\models.py changed, reloading.
+INFO 2025-02-19 23:51:39,054 autoreload Watching for file changes with StatReloader
+INFO 2025-02-19 23:56:39,381 autoreload Watching for file changes with StatReloader
+INFO 2025-02-19 23:58:32,595 autoreload D:\CRM_Developer\pythonProject\brokers\admin.py changed, reloading.
+INFO 2025-02-19 23:58:34,536 autoreload Watching for file changes with StatReloader
+INFO 2025-02-19 23:59:16,866 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 00:05:36,020 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 00:09:19,496 autoreload D:\CRM_Developer\pythonProject\accounting\models.py changed, reloading.
+INFO 2025-02-20 00:09:22,099 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 00:14:44,400 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 00:17:30,662 autoreload D:\CRM_Developer\pythonProject\accounting\models.py changed, reloading.
+INFO 2025-02-20 00:17:32,763 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 00:19:58,262 autoreload D:\CRM_Developer\pythonProject\accounting\admin.py changed, reloading.
+INFO 2025-02-20 00:20:00,438 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 00:21:02,723 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 00:23:40,812 autoreload D:\CRM_Developer\pythonProject\accounting\models.py changed, reloading.
+INFO 2025-02-20 00:23:43,186 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 00:31:44,821 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 00:34:05,868 autoreload D:\CRM_Developer\pythonProject\accounting\models.py changed, reloading.
+INFO 2025-02-20 00:34:08,326 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 00:34:21,138 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 00:37:44,973 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 00:39:25,948 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 00:41:45,532 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 00:51:58,010 autoreload D:\CRM_Developer\pythonProject\leads\signals.py changed, reloading.
+INFO 2025-02-20 00:52:00,186 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 00:52:32,876 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 00:58:12,718 autoreload D:\CRM_Developer\pythonProject\leads\signals.py changed, reloading.
+INFO 2025-02-20 00:58:15,401 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 01:01:53,125 autoreload D:\CRM_Developer\pythonProject\leads\signals.py changed, reloading.
+INFO 2025-02-20 01:01:55,262 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 01:02:37,490 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 01:12:00,517 autoreload D:\CRM_Developer\pythonProject\.venv\Lib\site-packages\notifications\helpers.py changed, reloading.
+INFO 2025-02-20 01:12:02,891 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 01:14:56,285 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 01:20:12,802 autoreload D:\CRM_Developer\pythonProject\employees\models.py changed, reloading.
+INFO 2025-02-20 01:20:12,802 autoreload D:\CRM_Developer\pythonProject\employees\models.py changed, reloading.
+INFO 2025-02-20 01:20:14,926 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 01:20:15,085 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 01:21:33,650 autoreload D:\CRM_Developer\pythonProject\employees\models.py changed, reloading.
+INFO 2025-02-20 01:21:33,709 autoreload D:\CRM_Developer\pythonProject\employees\models.py changed, reloading.
+INFO 2025-02-20 01:21:35,168 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 01:21:35,370 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 01:22:17,764 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 01:26:19,697 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 01:29:33,293 autoreload D:\CRM_Developer\pythonProject\employees\models.py changed, reloading.
+INFO 2025-02-20 01:29:35,070 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 01:31:52,825 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 01:35:05,844 autoreload D:\CRM_Developer\pythonProject\employees\models.py changed, reloading.
+INFO 2025-02-20 01:35:07,832 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 01:36:33,775 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 14:46:03,728 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 17:25:25,930 autoreload D:\CRM_Developer\pythonProject\brokers\models.py changed, reloading.
+INFO 2025-02-20 17:25:25,949 autoreload D:\CRM_Developer\pythonProject\brokers\models.py changed, reloading.
+INFO 2025-02-20 17:25:28,038 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 17:25:28,254 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 17:25:40,683 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 17:46:49,572 autoreload D:\CRM_Developer\pythonProject\brokers\models.py changed, reloading.
+INFO 2025-02-20 17:46:49,765 autoreload D:\CRM_Developer\pythonProject\brokers\models.py changed, reloading.
+INFO 2025-02-20 17:46:51,690 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 17:46:52,034 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 17:54:47,327 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 21:31:59,374 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 21:36:26,680 autoreload D:\CRM_Developer\pythonProject\brokers\models.py changed, reloading.
+INFO 2025-02-20 21:36:28,652 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 21:37:55,932 autoreload D:\CRM_Developer\pythonProject\brokers\models.py changed, reloading.
+INFO 2025-02-20 21:37:57,933 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 21:41:02,434 autoreload D:\CRM_Developer\pythonProject\brokers\models.py changed, reloading.
+INFO 2025-02-20 21:41:04,337 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 21:45:33,406 autoreload D:\CRM_Developer\pythonProject\brokers\models.py changed, reloading.
+INFO 2025-02-20 21:45:35,282 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 21:50:52,894 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 22:36:36,619 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 22:47:53,904 autoreload D:\CRM_Developer\pythonProject\real_estate_system\settings.py changed, reloading.
+INFO 2025-02-20 22:47:55,844 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 22:48:42,479 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 23:25:27,471 autoreload D:\CRM_Developer\pythonProject\brokers\models.py changed, reloading.
+INFO 2025-02-20 23:25:28,504 autoreload D:\CRM_Developer\pythonProject\brokers\models.py changed, reloading.
+INFO 2025-02-20 23:25:29,857 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 23:25:30,654 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 23:26:25,970 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 23:27:39,239 autoreload D:\CRM_Developer\pythonProject\brokers\models.py changed, reloading.
+INFO 2025-02-20 23:27:39,251 autoreload D:\CRM_Developer\pythonProject\brokers\models.py changed, reloading.
+INFO 2025-02-20 23:27:41,163 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 23:27:41,407 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 23:28:30,587 autoreload D:\CRM_Developer\pythonProject\brokers\models.py changed, reloading.
+INFO 2025-02-20 23:28:31,452 autoreload D:\CRM_Developer\pythonProject\brokers\models.py changed, reloading.
+INFO 2025-02-20 23:28:33,030 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 23:28:33,561 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 23:28:51,901 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 23:30:06,635 autoreload D:\CRM_Developer\pythonProject\brokers\models.py changed, reloading.
+INFO 2025-02-20 23:30:06,675 autoreload D:\CRM_Developer\pythonProject\brokers\models.py changed, reloading.
+INFO 2025-02-20 23:30:08,940 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 23:30:09,238 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 23:32:33,365 autoreload D:\CRM_Developer\pythonProject\brokers\models.py changed, reloading.
+INFO 2025-02-20 23:32:33,365 autoreload D:\CRM_Developer\pythonProject\brokers\models.py changed, reloading.
+INFO 2025-02-20 23:32:35,653 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 23:32:35,836 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 23:41:38,146 autoreload D:\CRM_Developer\pythonProject\brokers\serializers.py changed, reloading.
+INFO 2025-02-20 23:41:38,146 autoreload D:\CRM_Developer\pythonProject\brokers\serializers.py changed, reloading.
+INFO 2025-02-20 23:41:39,978 autoreload Watching for file changes with StatReloader
+INFO 2025-02-20 23:41:40,181 autoreload Watching for file changes with StatReloader
+INFO 2025-02-21 00:02:57,264 autoreload Watching for file changes with StatReloader
+INFO 2025-02-21 00:08:29,367 autoreload D:\CRM_Developer\pythonProject\real_estate_system\settings.py changed, reloading.
+INFO 2025-02-21 00:08:29,389 autoreload D:\CRM_Developer\pythonProject\real_estate_system\settings.py changed, reloading.
+INFO 2025-02-21 00:08:31,875 autoreload Watching for file changes with StatReloader
+INFO 2025-02-21 00:08:32,123 autoreload Watching for file changes with StatReloader
+INFO 2025-02-21 00:08:42,783 autoreload Watching for file changes with StatReloader
+INFO 2025-02-21 02:22:02,235 autoreload D:\CRM_Developer\pythonProject\real_estate_system\settings.py changed, reloading.
+INFO 2025-02-21 02:22:02,741 autoreload D:\CRM_Developer\pythonProject\real_estate_system\settings.py changed, reloading.
+INFO 2025-02-21 02:22:05,050 autoreload Watching for file changes with StatReloader
+INFO 2025-02-21 02:22:05,162 autoreload Watching for file changes with StatReloader
+INFO 2025-02-21 02:25:01,325 autoreload Watching for file changes with StatReloader
+INFO 2025-02-21 02:27:57,354 autoreload D:\CRM_Developer\pythonProject\real_estate_system\settings.py changed, reloading.
+INFO 2025-02-21 02:27:57,427 autoreload D:\CRM_Developer\pythonProject\real_estate_system\settings.py changed, reloading.
+INFO 2025-02-21 02:27:59,547 autoreload Watching for file changes with StatReloader
+INFO 2025-02-21 02:27:59,776 autoreload Watching for file changes with StatReloader
+INFO 2025-02-21 02:44:14,949 autoreload Watching for file changes with StatReloader
+INFO 2025-02-21 21:44:15,717 autoreload Watching for file changes with StatReloader
+INFO 2025-02-21 22:02:05,502 autoreload D:\CRM_Developer\pythonProject\real_estate_system\settings.py changed, reloading.
+INFO 2025-02-21 22:02:07,912 autoreload Watching for file changes with StatReloader
+INFO 2025-02-22 15:42:09,319 autoreload Watching for file changes with StatReloader
+INFO 2025-02-22 15:43:59,069 autoreload Watching for file changes with StatReloader
+INFO 2025-02-22 15:48:44,471 autoreload D:\CRM_Developer\pythonProject\crm\crm\web_scraper.py changed, reloading.
+INFO 2025-02-22 15:48:46,350 autoreload Watching for file changes with StatReloader
+INFO 2025-02-22 15:49:21,060 autoreload Watching for file changes with StatReloader
+INFO 2025-02-22 15:53:22,453 autoreload D:\CRM_Developer\pythonProject\employees\admin.py changed, reloading.
+INFO 2025-02-22 15:53:24,690 autoreload Watching for file changes with StatReloader
+INFO 2025-02-22 15:55:29,047 autoreload D:\CRM_Developer\pythonProject\accounting\models.py changed, reloading.
+INFO 2025-02-22 15:55:31,129 autoreload Watching for file changes with StatReloader
+INFO 2025-02-22 15:59:04,659 autoreload D:\CRM_Developer\pythonProject\employees\models.py changed, reloading.
+INFO 2025-02-22 15:59:06,208 autoreload Watching for file changes with StatReloader
+INFO 2025-02-22 16:00:14,224 autoreload D:\CRM_Developer\pythonProject\employees\models.py changed, reloading.
+INFO 2025-02-22 16:00:15,578 autoreload Watching for file changes with StatReloader
+INFO 2025-02-22 16:06:18,743 autoreload D:\CRM_Developer\pythonProject\real_estate_system\settings.py changed, reloading.
+INFO 2025-02-22 16:06:20,298 autoreload Watching for file changes with StatReloader
+INFO 2025-02-22 16:09:56,458 autoreload Watching for file changes with StatReloader
+INFO 2025-02-22 16:15:52,912 autoreload D:\CRM_Developer\pythonProject\employees\models.py changed, reloading.
+INFO 2025-02-22 16:15:55,051 autoreload Watching for file changes with StatReloader
+INFO 2025-02-22 16:17:06,177 autoreload D:\CRM_Developer\pythonProject\employees\models.py changed, reloading.
+INFO 2025-02-22 16:17:08,248 autoreload Watching for file changes with StatReloader
+INFO 2025-02-22 16:17:26,669 autoreload Watching for file changes with StatReloader
+INFO 2025-02-22 17:22:21,633 autoreload D:\CRM_Developer\pythonProject\employees\models.py changed, reloading.
+INFO 2025-02-22 17:22:23,870 autoreload Watching for file changes with StatReloader
+INFO 2025-02-22 17:26:11,942 autoreload D:\CRM_Developer\pythonProject\dashboard\models.py changed, reloading.
+INFO 2025-02-22 17:26:13,792 autoreload Watching for file changes with StatReloader
+INFO 2025-02-22 17:29:02,034 autoreload D:\CRM_Developer\pythonProject\dashboard\models.py changed, reloading.
+INFO 2025-02-22 17:29:03,819 autoreload Watching for file changes with StatReloader
+INFO 2025-02-22 17:30:48,588 autoreload Watching for file changes with StatReloader
+INFO 2025-02-22 17:34:39,217 autoreload Watching for file changes with StatReloader

@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="text-center">📊 Dashboard</h2>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="card text-white bg-primary mb-3">
+                <div class="card-header">Total Clients</div>
+                <div class="card-body">
+                    <h4 class="card-title">{{ dashboard.total_clients }}</h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card text-white bg-success mb-3">
+                <div class="card-header">Total Properties</div>
+                <div class="card-body">
+                    <h4 class="card-title">{{ dashboard.total_properties }}</h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card text-white bg-danger mb-3">
+                <div class="card-header">Total Sales</div>
+                <div class="card-body">
+                    <h4 class="card-title">${{ dashboard.total_sales }}</h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card text-white bg-warning mb-3">
+                <div class="card-header">Active Campaigns</div>
+                <div class="card-body">
+                    <h4 class="card-title">{{ dashboard.active_campaigns }}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,36 +1,29 @@
-from rest_framework import generics, permissions
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import permissions, status
+from datetime import date, timedelta
 from .models import Client
-from .serializers import ClientSerializer
 
-class ClientListView(generics.ListCreateAPIView):
+
+class ClientFollowUpView(APIView):
     """
-    عرض لإرجاع قائمة العملاء أو إنشاء عميل جديد.
+    ✅ API لمتابعة العملاء وتحليل البيانات الذكية.
     """
-    queryset = Client.objects.all().order_by('-created_at')  # ترتيب السجلات الأحدث أولاً
-    serializer_class = ClientSerializer
-    permission_classes = [permissions.IsAuthenticated]  # السماح للمستخدمين المصادق عليهم فقط
+    permission_classes = [permissions.IsAuthenticated]
 
-    def get_queryset(self):
+    def get(self, request):
         """
-        تخصيص البيانات التي يتم إرجاعها بناءً على البحث أو التصفية.
+        ✅ البحث عن العملاء الذين يجب متابعتهم.
         """
-        queryset = super().get_queryset()
-        search = self.request.query_params.get('search', None)  # البحث
-        if search:
-            queryset = queryset.filter(name__icontains=search)
-        return queryset
+        today = date.today()
+        upcoming_followups = Client.objects.filter(follow_up_date__lte=today + timedelta(days=7)).order_by('follow_up_date')
 
+        # ✅ تصنيف العملاء بناءً على احتمالية الشراء
+        high_potential_clients = Client.objects.filter(predicted_interest_score__gte=75)
 
-class ClientDetailView(generics.RetrieveUpdateDestroyAPIView):
-    """
-    عرض لتفاصيل العميل، تحديث، أو حذف.
-    """
-    queryset = Client.objects.all()
-    serializer_class = ClientSerializer
-    permission_classes = [permissions.IsAuthenticated]  # السماح للمستخدمين المصادق عليهم فقط
+        data = {
+            "follow_up_clients": list(upcoming_followups.values('name', 'email', 'phone', 'status', 'follow_up_date')),
+            "high_potential_clients": list(high_potential_clients.values('name', 'email', 'predicted_interest_score'))
+        }
 
-    def perform_update(self, serializer):
-        """
-        تخصيص عملية التحديث.
-        """
-        serializer.save(updated_at=self.request.user)
+        return Response(data, status=status.HTTP_200_OK)

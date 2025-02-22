@@ -1,13 +1,13 @@
 from django.urls import path
 from .views import PropertyListView, PropertyDetailView
 
-# تعريف مساحة أسماء للتطبيق
+# ✅ تحديد `app_name` لمنع التضارب في المشروع
 app_name = 'properties'
 
 urlpatterns = [
-    # عرض قائمة العقارات
-    path('', PropertyListView.as_view(), name='list'),
+    # ✅ عرض قائمة العقارات وإمكانية إنشاء عقار جديد
+    path('', PropertyListView.as_view(), name='property-list'),
 
-    # عرض تفاصيل العقار بناءً على المفتاح الأساسي
-    path('<int:pk>/', PropertyDetailView.as_view(), name='detail'),
+    # ✅ عرض/تحديث/حذف عقار محدد بناءً على `UUID`
+    path('<uuid:pk>/', PropertyDetailView.as_view(), name='property-detail'),
 ]

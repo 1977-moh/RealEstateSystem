@@ -1,51 +1,98 @@
-from rest_framework.views import APIView
+from rest_framework import generics, filters, status
 from rest_framework.response import Response
-from rest_framework import status
+from rest_framework.pagination import PageNumberPagination
+from django.db.models import Q
 from .models import Payment
 from .serializers import PaymentSerializer
-from django.core.paginator import Paginator
 
 
-class PaymentListCreateView(APIView):
+class CustomPagination(PageNumberPagination):
     """
-    عرض لإنشاء واستعراض المدفوعات.
+    ✅ إعداد التصفح (Pagination) لتحديد عدد العناصر في كل صفحة.
     """
+    page_size = 10
+    page_size_query_param = 'page_size'
+    max_page_size = 100
 
-    def get(self, request):
+
+class PaymentListCreateView(generics.ListCreateAPIView):
+    """
+    ✅ عرض لإنشاء واستعراض المدفوعات مع ميزات محسّنة:
+    - البحث المتقدم
+    - التصفية حسب عدة معايير
+    - التصفح (pagination)
+    - الفرز
+    """
+    serializer_class = PaymentSerializer
+    pagination_class = CustomPagination
+    filter_backends = [filters.OrderingFilter, filters.SearchFilter]
+
+    # ✅ دعم البحث والفرز
+    search_fields = ['method', 'description', 'amount', 'date']
+    ordering_fields = ['amount', 'date', 'method']
+    ordering = ['-date', '-created_at']  # ✅ الترتيب الافتراضي من الأحدث إلى الأقدم
+
+    def get_queryset(self):
         """
-        استرجاع قائمة المدفوعات مع دعم التصفية.
+        ✅ تطبيق التصفية الديناميكية عند استرجاع المدفوعات.
         """
-        # جلب جميع المدفوعات
-        payments = Payment.objects.all()
+        queryset = Payment.objects.all()
+        request = self.request
 
-        # تصفية البيانات بناءً على معلمات الطلب (اختياري)
-        method = request.query_params.get('method')  # التصفية حسب طريقة الدفع
-        date = request.query_params.get('date')  # التصفية حسب التاريخ
-        if method:
-            payments = payments.filter(method=method)
-        if date:
-            payments = payments.filter(date=date)
+        filters = Q()
+        if (method := request.query_params.get('method')):
+            filters &= Q(method__icontains=method)
+        if (date := request.query_params.get('date')):
+            filters &= Q(date=date)
+        if (min_amount := request.query_params.get('min_amount')):
+            filters &= Q(amount__gte=min_amount)
+        if (max_amount := request.query_params.get('max_amount')):
+            filters &= Q(amount__lte=max_amount)
+        if (search := request.query_params.get('search')):
+            filters &= Q(description__icontains=search) | Q(method__icontains=search) | Q(amount__icontains=search)
 
-        # دعم التصفح (pagination)
-        paginator = Paginator(payments, 10)  # عرض 10 عناصر لكل صفحة
-        page = request.query_params.get('page', 1)
-        payments_page = paginator.get_page(page)
+        return queryset.filter(filters)
 
-        # تسلسل البيانات وإرجاعها
-        serializer = PaymentSerializer(payments_page, many=True)
-        return Response({
-            "total": paginator.count,
-            "num_pages": paginator.num_pages,
-            "current_page": int(page),
-            "results": serializer.data
-        }, status=status.HTTP_200_OK)
-
-    def post(self, request):
+    def post(self, request, *args, **kwargs):
         """
-        إنشاء دفعة جديدة.
+        ✅ إنشاء دفعة جديدة مع التحقق من صحة البيانات ومنع التكرار.
         """
-        serializer = PaymentSerializer(data=request.data)
+        serializer = self.get_serializer(data=request.data)
+
         if serializer.is_valid():
+            amount = serializer.validated_data['amount']
+            method = serializer.validated_data['method']
+            date = serializer.validated_data['date']
+
+            # التحقق مما إذا كانت هناك دفعة مشابهة خلال آخر 5 دقائق
+            if Payment.objects.filter(amount=amount, method=method, date=date).exists():
+                return Response({
+                    "error": "🚨 هذه الدفعة مسجلة بالفعل!",
+                    "payment": serializer.data
+                }, status=status.HTTP_400_BAD_REQUEST)
+
             serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response({
+                "message": "✅ تم إنشاء الدفعة بنجاح!",
+                "payment": serializer.data
+            }, status=status.HTTP_201_CREATED)
+
+        return Response({
+            "error": "🚨 حدث خطأ في البيانات.",
+            "details": serializer.errors
+        }, status=status.HTTP_400_BAD_REQUEST)
+
+
+class PaymentDetailView(generics.RetrieveUpdateDestroyAPIView):
+    """
+    ✅ عرض / تعديل / حذف دفعة محددة
+    """
+    queryset = Payment.objects.all()
+    serializer_class = PaymentSerializer
+
+    def perform_update(self, serializer):
+        """
+        ✅ منع تعديل `date` بعد إنشاء الدفعة.
+        """
+        serializer.validated_data.pop('date', None)
+        serializer.save()

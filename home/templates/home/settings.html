@@ -1,0 +1,47 @@
+{% extends "home/base.html" %}
+
+{% block title %}إعدادات الموقع{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center">🔧 إعدادات الموقع</h2>
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="mb-3">
+            <label for="site_name" class="form-label">اسم الموقع:</label>
+            <input type="text" class="form-control" id="site_name" name="site_name" value="{{ site_settings.site_name }}">
+        </div>
+
+        <div class="mb-3">
+            <label for="contact_email" class="form-label">البريد الإلكتروني:</label>
+            <input type="email" class="form-control" id="contact_email" name="contact_email" value="{{ site_settings.contact_email }}">
+        </div>
+
+        <div class="mb-3">
+            <label for="phone_number" class="form-label">رقم الهاتف:</label>
+            <input type="text" class="form-control" id="phone_number" name="phone_number" value="{{ site_settings.phone_number }}">
+        </div>
+
+        <div class="mb-3">
+            <label for="address" class="form-label">العنوان:</label>
+            <textarea class="form-control" id="address" name="address">{{ site_settings.address }}</textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="logo" class="form-label">تحميل شعار الموقع:</label>
+            <input type="file" class="form-control" id="logo" name="logo">
+        </div>
+
+        {% if site_settings.logo %}
+            <div class="mb-3">
+                <p>📌 الشعار الحالي:</p>
+                <img src="{{ site_settings.get_logo_url }}" alt="Logo" class="img-fluid" width="150">
+            </div>
+        {% endif %}
+
+        <button type="submit" class="btn btn-primary">💾 حفظ التغييرات</button>
+    </form>
+</div>
+{% endblock %}
